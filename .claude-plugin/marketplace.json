@@ -1,0 +1,23 @@
+{
+  "name": "codex-reviewer-marketplace",
+  "owner": {
+    "name": "nathankim0",
+    "email": "nathankim0@github.com"
+  },
+  "metadata": {
+    "description": "OpenAI Codex 자동 코드 리뷰 플러그인 마켓플레이스"
+  },
+  "plugins": [
+    {
+      "name": "codex-reviewer",
+      "source": "./",
+      "description": "Claude Code에서 OpenAI Codex로 자동 코드 리뷰하는 플러그인",
+      "version": "1.0.0",
+      "author": {
+        "name": "nathankim0"
+      },
+      "keywords": ["codex", "code-review", "openai", "automation"],
+      "strict": false
+    }
+  ]
+}
