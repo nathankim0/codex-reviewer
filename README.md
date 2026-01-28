@@ -17,13 +17,13 @@ Claude Code에서 파일을 수정할 때 **OpenAI Codex**가 자동으로 코�
 Claude Code에서:
 
 ```
-/plugin marketplace add https://github.com/nathankim0/codex-reviewer
+/plugin marketplace add nathankim0/codex-reviewer
 ```
 
 ### 2. 플러그인 설치
 
 ```
-/plugin install codex-reviewer
+/plugin install codex-reviewer@codex-reviewer-marketplace
 ```
 
 ### 3. 초기 설정
