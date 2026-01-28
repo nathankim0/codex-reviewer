@@ -1,0 +1,13 @@
+{
+  "name": "codex-reviewer",
+  "version": "1.0.0",
+  "description": "OpenAI Codex로 Claude Code 작성 코드를 자동 리뷰하는 플러그인",
+  "author": {
+    "name": "nathankim0",
+    "url": "https://github.com/nathankim0"
+  },
+  "repository": "https://github.com/nathankim0/codex-reviewer",
+  "license": "MIT",
+  "keywords": ["codex", "code-review", "openai", "automation"],
+  "hooks": "./hooks/hooks.json"
+}

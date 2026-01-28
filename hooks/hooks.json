@@ -1,0 +1,28 @@
+{
+  "description": "Codex 자동 코드 리뷰 hook",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/codex-review.sh",
+            "timeout": 180
+          }
+        ]
+      }
+    ],
+    "Setup": [
+      {
+        "matcher": "init",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/setup.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
