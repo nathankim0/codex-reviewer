@@ -83,7 +83,7 @@ echo "0" > "$COUNTER_FILE"
 # 변경된 파일 목록 추출
 changed_files=$(echo "$all_changes" | grep -E '^\[(Edit|Write)\]' | sed 's/^\[.*\] //' | sed 's/ (new file)//' | sort -u)
 
-echo "  🔍 Codex Review 진행 중... ($BATCH_SIZE개 변경사항)" >&2
+echo "  🔍 Codex Review 진행 중... (${BATCH_SIZE}건)" >&2
 
 review_result=$(codex exec --full-auto \
 "You are reviewing a batch of code changes made during a single coding session.
@@ -117,7 +117,7 @@ fi
 
 # ─── 사용자에게 리뷰 결과 표시 ───
 echo "" >&2
-echo "┌─ 🔍 Codex Review ($BATCH_SIZE changes)" >&2
+echo "┌─ 🔍 Codex Review (${BATCH_SIZE}건)" >&2
 echo "│  Files: $changed_files" >&2
 echo "│" >&2
 echo "$review_result" | sed 's/^/│  /' >&2
@@ -132,7 +132,7 @@ cat << EOF
 {
   "hookSpecificOutput": {
     "hookEventName": "PostToolUse",
-    "additionalContext": "🔍 Codex Review (${BATCH_SIZE}개 변경사항 일괄 리뷰):\n${escaped_result}\n\n위 피드백은 최근 ${BATCH_SIZE}개 코드 변경에 대한 일괄 리뷰입니다. 현재 진행 중인 작업 목표와 직접 관련된 버그/이슈만 반영하세요. 기존 코드의 구조적 문제나 작업 범위 밖의 제안은 무시하세요."
+    "additionalContext": "Codex Review (${BATCH_SIZE}건 일괄 리뷰):\n${escaped_result}\n\n위 피드백은 최근 코드 변경에 대한 일괄 리뷰입니다. 현재 진행 중인 작업 목표와 직접 관련된 버그/이슈만 반영하세요. 기존 코드의 구조적 문제나 작업 범위 밖의 제안은 무시하세요."
   }
 }
 EOF
