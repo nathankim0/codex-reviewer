@@ -16,9 +16,9 @@
 # 2. 커밋 & 푸시 (= 마켓플레이스 배포)
 git add -A && git commit -m "커밋메시지" && git push origin main
 
-# 3. 로컬 플러그인 업데이트
+# 3. 플러그인 업데이트 (user scope)
 claude plugin marketplace update codex-reviewer-marketplace
-cd /Users/nathan/algocare-home/mobile && claude plugin uninstall codex-reviewer@codex-reviewer-marketplace --scope local && claude plugin install codex-reviewer@codex-reviewer-marketplace --scope local
+claude plugin uninstall codex-reviewer@codex-reviewer-marketplace --scope user && claude plugin install codex-reviewer@codex-reviewer-marketplace --scope user
 ```
 
 매 수정마다 이 3단계를 빠짐없이 수행할 것.
