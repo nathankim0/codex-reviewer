@@ -16,12 +16,18 @@
 # 2. 커밋 & 푸시 (= 마켓플레이스 배포)
 git add -A && git commit -m "커밋메시지" && git push origin main
 
-# 3. 플러그인 업데이트 (user scope)
+# 3. GitHub 태그 & 릴리스 (plugin.json 버전과 일치)
+git tag v$(jq -r '.version' .claude-plugin/plugin.json)
+git push origin v$(jq -r '.version' .claude-plugin/plugin.json)
+gh release create v$(jq -r '.version' .claude-plugin/plugin.json) --title "v$(jq -r '.version' .claude-plugin/plugin.json)" --notes "변경사항 요약" --latest
+
+# 4. 플러그인 업데이트 (user scope)
 claude plugin marketplace update codex-reviewer-marketplace
 claude plugin uninstall codex-reviewer@codex-reviewer-marketplace --scope user && claude plugin install codex-reviewer@codex-reviewer-marketplace --scope user
 ```
 
-매 수정마다 이 3단계를 빠짐없이 수행할 것.
+매 수정마다 이 4단계를 빠짐없이 수행할 것.
+- plugin.json 버전 = marketplace.json 버전 = git tag = GitHub release 모두 일치시킨다.
 
 ## 프로젝트 구조
 
