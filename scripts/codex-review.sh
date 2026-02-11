@@ -69,7 +69,6 @@ echo "$count" > "$COUNTER_FILE"
 
 # 배치 사이즈 미달이면 누적만 하고 종료
 if [ "$count" -lt "$BATCH_SIZE" ]; then
-    echo "  ℹ️ Codex Review: 변경 누적 중 ($count/$BATCH_SIZE)" >&2
     exit 0
 fi
 
