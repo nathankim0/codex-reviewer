@@ -11,9 +11,13 @@
 
 1. **커밋**: conventional commit (한국어 메시지)
 2. **푸시**: `git push origin main`
-3. **플러그인 재설치** (배포): `claude plugin install --file /Users/nathan/codex-reviewer/.claude-plugin/plugin.json`
+3. **마켓플레이스 업데이트**: `claude plugin marketplace update codex-reviewer-marketplace`
+4. **플러그인 재설치**:
+   ```bash
+   cd /Users/nathan/algocare-home/mobile && claude plugin uninstall codex-reviewer@codex-reviewer-marketplace --scope local && claude plugin install codex-reviewer@codex-reviewer-marketplace --scope local
+   ```
 
-매 수정마다 이 3단계를 빠짐없이 수행할 것.
+매 수정마다 이 4단계를 빠짐없이 수행할 것.
 
 ## 프로젝트 구조
 
