@@ -12,7 +12,7 @@
       "name": "codex-reviewer",
       "source": "./",
       "description": "Claude Code에서 OpenAI Codex로 자동 코드 리뷰하는 플러그인",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "author": {
         "name": "nathankim0"
       },

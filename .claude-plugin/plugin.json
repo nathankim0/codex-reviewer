@@ -1,6 +1,6 @@
 {
   "name": "codex-reviewer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "OpenAI Codex로 Claude Code 작성 코드를 자동 리뷰하는 플러그인",
   "author": {
     "name": "nathankim0",
